@@ -1,4 +1,4 @@
-#sidebar {
+.sidebar {
     box-sizing: border-box;
     height: 100vh;
     width: 250px;
@@ -18,32 +18,31 @@
     border-right: 1px solid black;
     z-index: 1000;
 }
-#sidebar::-webkit-scrollbar {
+.sidebar::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Edge */
 }
-#sidebar.close {
+.sidebar.close {
     padding: 5px;
     width: 60px;
 }
-#sidebar ul {
+.sidebar ul {
     list-style: none;
 }
-#sidebar > ul > li:first-child {
+.sidebar > ul > li:first-child {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 16px;
-    .logo {
-        font-weight: 600;
-    }
 }
-#sidebar ul li.active a{
+.sidebar > ul > li:first-child .logo {
+    font-weight: 600;
+}
+.sidebar ul li.active a{
     color: var(--accent-clr);
-
-    svg {
-        fill: var(--accent-clr);
-    }
 }
-#sidebar a, #sidebar .dropdown-btn, #sidebar .logo {
+.sidebar ul li.active a svg {
+    fill: var(--accent-clr);
+}
+.sidebar a, .sidebar .dropdown-btn, .sidebar .logo {
     border-radius: .5em;
     padding: .85em;
     text-decoration: none;
@@ -60,26 +59,25 @@
     font: inherit;
     cursor: pointer;
 }
-#sidebar svg {
+.sidebar svg {
     flex-shrink: 0;
     fill: var(--text-clr);
 }
-#sidebar a span, #sidebar .dropdown-btn span {
+.sidebar a span, .sidebar .dropdown-btn span {
     flex-grow: 1;
 }
-#sidebar a:hover, #sidebar .dropdown-btn:hover {
+.sidebar a:hover, .sidebar .dropdown-btn:hover {
     background-color: var(--hover-clr);
 }
-#sidebar .sub-menu {
+.sidebar .sub-menu {
     display: grid;
     grid-template-rows: 0fr;
     transition: 300ms ease-in-out;
-
-    > div {
-        overflow: hidden;
-    }
 }
-#sidebar .sub-menu.show {
+.sidebar .sub-menu > div {
+    overflow: hidden;
+}
+.sidebar .sub-menu.show {
     grid-template-rows: 1fr;
 }
 .dropdown-btn svg {
@@ -88,30 +86,26 @@
 .rotate svg:last-child {
     rotate: -180deg;
 }
-#sidebar .sub-menu  {
+.sidebar .sub-menu  {
     padding-left: 2em;
 }
-#toggle-btn {
+.toggle-btn {
     margin-left: auto;
     padding: 1em;
     border: none;
     border-radius: .5em;
     background: none;
     cursor: pointer;
-
-    svg {
-        transition: rotate 150ms ease;
-    }
 }
-#toggle-btn:hover {
+.toggle-btn svg {
+    transition: rotate 150ms ease;
+}
+.toggle-btn:hover {
     background-color: var(--hover-clr);
 }
-#sidebar ul li:nth-of-type(7){
+.sidebar ul li:nth-of-type(7){
     padding-top: 1.5rem;
 }
-#sidebar ul li:nth-of-type(10){
+.sidebar ul li:nth-of-type(10){
     padding-top: 1.5rem;
-}
-.icon {
-    
 }

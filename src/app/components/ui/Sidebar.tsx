@@ -11,11 +11,11 @@ export default function Sidebar(){
     };
 
     return (
-        <aside id="sidebar">
+        <aside className={`${styles["sidebar"]} ${sidebarOpen ? styles["close"] : ""}`}>
             <ul>
                 <li>
                 <span className={styles["logo"]}>CourtsPro</span>
-                <button onClick={toggleSidebar} id="toggle-btn">
+                <button onClick={toggleSidebar} className={styles["toggle-btn"]}>
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
                     id="Bold"
@@ -68,12 +68,12 @@ export default function Sidebar(){
                 <ul className={styles["sub-menu"]}>
                     <div>
                     <li>
-                        <a id="search-btn" onClick={toggleSidebar} href="#">
+                        <a className={styles["search-btn"]} onClick={toggleSidebar} href="#">
                         Search
                         </a>
                     </li>
                     <li>
-                        <a id="add-user-btn" onClick={toggleSidebar} href="#">
+                        <a className={styles["add-user-btn"]} onClick={toggleSidebar} href="#">
                         Add
                         </a>
                     </li>
