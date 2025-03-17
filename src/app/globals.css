@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700');
+
 :root {
   --base-clr: #324B50;
   --line-clr: #42434a;
@@ -17,9 +19,5 @@ html {
 }
 body {
   min-height: 100vh;
-  min-height: 100dvh;
-  background-color: lightgray;
-  color: var(--text-clr);
-  display: grid;
-  grid-template-columns: auto 1fr;
+  min-height: 100vh;
 }

@@ -1,3 +1,81 @@
+.main-container {
+    min-height: 100%;
+    min-height: 100%;
+    background-color: lightgray;
+    color: var(--text-clr);
+}
+
+/* HEADER STYLES */
+.site-header {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 250px;
+    width: calc(100% - 250px);
+    height: 70px;
+    background-color: var(--Tertiary-Color);
+    border-top: 4px solid var(--primary-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease-in-out, width 0.3s ease-in-out; 
+    z-index: 1000;
+}
+.branding-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: auto;
+    gap: 0.5rem;
+    padding: 0 1rem;
+}
+.company-logo {
+    width: 100%;
+    max-width: 3rem;
+    height: auto;
+}
+.branding-container p {
+    font-family: var(--main-font-family);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.company-location-container p {
+    font-family: var(--main-font-family);
+    font-size: 1.5rem;
+    font-weight: 400;
+    transform: translateX(-50%);
+    text-wrap: nowrap;
+}
+.branding-container p, .company-location-container p {
+    color: black;
+}
+.company-location-container, .profile-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: auto;
+    padding: 0 1rem;
+}
+.company-location-container {
+    flex-grow: 1;
+    justify-content: center;
+}
+.profile-container svg {
+    height: 2rem;
+    width: 2rem;
+    fill: black;
+}
+.profile-container svg:hover {
+    height: 2rem;
+    width: 2rem;
+    fill: var(--base-clr);
+}
+.site-header.expand {
+    left: 60px;
+    width: calc(100vw - 60px);
+}
+
+/* SIDEBAR STYLES */
 .sidebar {
     box-sizing: border-box;
     height: 100vh;

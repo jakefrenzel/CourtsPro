@@ -1,9 +1,9 @@
 import styles from '@/app/components/styles/Header.module.css';
 import Image from 'next/image';
-
-export default function Header(){
+  
+export default function Header() {
     return (
-        <nav className={styles['site-header']} id="site-header">
+        <nav className={styles["toggle-btn"]}>
             <div className={styles['branding-container']}>
                 <Image
                 className={styles["company-logo"]}
