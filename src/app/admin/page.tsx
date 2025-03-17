@@ -1,11 +1,9 @@
-import Header from '@/app/components/ui/Header';
-import Sidebar from '@/app/components/ui/Sidebar';
+import Navigation from '@/app/components/ui/Navigation';
 
 export default function Page(){
     return (
         <>
-            <Header />
-            <Sidebar />
+            <Navigation />
         </>
     );
 }
