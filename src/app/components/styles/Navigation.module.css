@@ -1,3 +1,14 @@
+<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
+=======
+.main-container {
+    min-height: 100%;
+    min-height: 100%;
+    background-color: lightgray;
+    color: var(--text-clr);
+}
+
+/* HEADER STYLES */
+>>>>>>> main:src/app/components/styles/Sidebar.module.css
 .site-header {
     display: flex;
     position: fixed;
@@ -5,7 +16,11 @@
     align-items: center;
     top: 0;
     left: 250px;
+<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
     width: calc(100vw - 250px);
+=======
+    width: calc(100% - 250px);
+>>>>>>> main:src/app/components/styles/Sidebar.module.css
     height: 70px;
     background-color: var(--Tertiary-Color);
     border-top: 4px solid var(--primary-color);
@@ -13,7 +28,10 @@
     transition: left 0.3s ease-in-out, width 0.3s ease-in-out; 
     z-index: 1000;
 }
+<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
 
+=======
+>>>>>>> main:src/app/components/styles/Sidebar.module.css
 .branding-container {
     display: flex;
     align-items: center;
@@ -27,13 +45,19 @@
     max-width: 3rem;
     height: auto;
 }
+<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
 
+=======
+>>>>>>> main:src/app/components/styles/Sidebar.module.css
 .branding-container p {
     font-family: var(--main-font-family);
     font-size: 1.5rem;
     font-weight: 400;
 }
+<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
 
+=======
+>>>>>>> main:src/app/components/styles/Sidebar.module.css
 .company-location-container p {
     font-family: var(--main-font-family);
     font-size: 1.5rem;
@@ -51,28 +75,45 @@
     width: auto;
     padding: 0 1rem;
 }
+<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
 
+=======
+>>>>>>> main:src/app/components/styles/Sidebar.module.css
 .company-location-container {
     flex-grow: 1;
     justify-content: center;
 }
+<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
 
+=======
+>>>>>>> main:src/app/components/styles/Sidebar.module.css
 .profile-container svg {
     height: 2rem;
     width: 2rem;
     fill: black;
 }
+<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
 
+=======
+>>>>>>> main:src/app/components/styles/Sidebar.module.css
 .profile-container svg:hover {
     height: 2rem;
     width: 2rem;
     fill: var(--base-clr);
 }
+<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
 
+=======
+>>>>>>> main:src/app/components/styles/Sidebar.module.css
 .site-header.expand {
     left: 60px;
     width: calc(100vw - 60px);
 }
+<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
+=======
+
+/* SIDEBAR STYLES */
+>>>>>>> main:src/app/components/styles/Sidebar.module.css
 .sidebar {
     box-sizing: border-box;
     height: 100vh;
