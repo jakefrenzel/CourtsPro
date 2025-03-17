@@ -7,9 +7,19 @@ import { useState } from 'react';
 export default function Navigation(){
 
     const [sidebarOpen, setSidebarOpen] = useState(false);
-    
+    const [userDropdown, setUserDropdown] = useState(false);
+    const [merchDropdown, setMerchDropdown] = useState(false);
+
     const toggleSidebar = () => {
         setSidebarOpen(!sidebarOpen);
+    };
+
+    const toggleUserDropdown = () => {
+        setUserDropdown(!userDropdown);
+    };
+
+    const toggleMerchDropdown = () => {
+        setMerchDropdown(!merchDropdown);
     };
 
     return (
