@@ -12,18 +12,31 @@ export default function Navigation(){
 
     const toggleSidebar = () => {
         setSidebarOpen(!sidebarOpen);
+
+        if (userDropdown || merchDropdown) {
+            setUserDropdown(false);
+            setMerchDropdown(false);
+        }
     };
 
     const toggleUserDropdown = () => {
         setUserDropdown(!userDropdown);
+
+        if (merchDropdown) {
+            setMerchDropdown(false);
+        }
     };
 
     const toggleMerchDropdown = () => {
         setMerchDropdown(!merchDropdown);
+
+        if (userDropdown) {
+            setUserDropdown(false);
+        }
     };
 
     return (
-        <>
+        <div className={styles["nav-container"]}>
             <nav className={`${styles['site-header']} ${sidebarOpen ? styles["expand"] : ""}`} id="site-header">
                 <div className={styles['branding-container']}>
                     <Image
@@ -65,7 +78,7 @@ export default function Navigation(){
             <ul>
                 <li>
                 <span className={styles["logo"]}>CourtsPro</span>
-                <button onClick={toggleSidebar} className={styles["toggle-btn"]}>
+                <button onClick={toggleSidebar} className={`${styles["toggle-btn"]} ${sidebarOpen ? styles["rotate"] : ""}`}>
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
                     id="Bold"
@@ -93,7 +106,7 @@ export default function Navigation(){
                 </a>
                 </li>
                 <li>
-                <button onClick={toggleSidebar} className={styles["dropdown-btn"]}>
+                <button onClick={toggleUserDropdown} className={`${styles["dropdown-btn"]} ${userDropdown ? styles["rotate"] : ""}`}>
                     <svg
                     id="Layer_1"
                     height={24}
@@ -115,7 +128,7 @@ export default function Navigation(){
                     <path d="M480-360 280-560h400L480-360Z" />
                     </svg>
                 </button>
-                <ul className={styles["sub-menu"]}>
+                <ul className={`${styles["sub-menu"]} ${userDropdown ? styles["show"] : ""}`}>
                     <div>
                     <li>
                         <a className={styles["search-btn"]} onClick={toggleSidebar} href="#">
@@ -191,7 +204,7 @@ export default function Navigation(){
                 </a>
                 </li>
                 <li>
-                <button onClick={toggleSidebar} className={styles["dropdown-btn"]}>
+                <button onClick={toggleMerchDropdown} className={`${styles["dropdown-btn"]} ${merchDropdown ? styles["rotate"] : ""}`}>
                     <svg
                     xmlns="http://www.w3.org/2000/svg"
                     id="Bold"
@@ -214,7 +227,7 @@ export default function Navigation(){
                     <path d="M480-360 280-560h400L480-360Z" />
                     </svg>
                 </button>
-                <ul className="sub-menu">
+                <ul className={`${styles["sub-menu"]} ${merchDropdown ? styles["show"] : ""}`}>
                     <div>
                     <li>
                         <a href="#">Memberships</a>
@@ -284,6 +297,6 @@ export default function Navigation(){
                 </li>
             </ul>
             </aside>
-        </>
+        </div>
     );
 }

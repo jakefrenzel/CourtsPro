@@ -1,14 +1,13 @@
-<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
-=======
-.main-container {
+.nav-container {
     min-height: 100%;
     min-height: 100%;
     background-color: lightgray;
     color: var(--text-clr);
+    display: grid;
+    grid-template-columns: auto 1fr;
 }
 
-/* HEADER STYLES */
->>>>>>> main:src/app/components/styles/Sidebar.module.css
+/* Header Styles */
 .site-header {
     display: flex;
     position: fixed;
@@ -16,11 +15,7 @@
     align-items: center;
     top: 0;
     left: 250px;
-<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
     width: calc(100vw - 250px);
-=======
-    width: calc(100% - 250px);
->>>>>>> main:src/app/components/styles/Sidebar.module.css
     height: 70px;
     background-color: var(--Tertiary-Color);
     border-top: 4px solid var(--primary-color);
@@ -28,10 +23,7 @@
     transition: left 0.3s ease-in-out, width 0.3s ease-in-out; 
     z-index: 1000;
 }
-<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
 
-=======
->>>>>>> main:src/app/components/styles/Sidebar.module.css
 .branding-container {
     display: flex;
     align-items: center;
@@ -45,19 +37,13 @@
     max-width: 3rem;
     height: auto;
 }
-<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
 
-=======
->>>>>>> main:src/app/components/styles/Sidebar.module.css
 .branding-container p {
     font-family: var(--main-font-family);
     font-size: 1.5rem;
     font-weight: 400;
 }
-<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
 
-=======
->>>>>>> main:src/app/components/styles/Sidebar.module.css
 .company-location-container p {
     font-family: var(--main-font-family);
     font-size: 1.5rem;
@@ -75,45 +61,30 @@
     width: auto;
     padding: 0 1rem;
 }
-<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
 
-=======
->>>>>>> main:src/app/components/styles/Sidebar.module.css
 .company-location-container {
     flex-grow: 1;
     justify-content: center;
 }
-<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
 
-=======
->>>>>>> main:src/app/components/styles/Sidebar.module.css
 .profile-container svg {
     height: 2rem;
     width: 2rem;
     fill: black;
 }
-<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
 
-=======
->>>>>>> main:src/app/components/styles/Sidebar.module.css
 .profile-container svg:hover {
     height: 2rem;
     width: 2rem;
     fill: var(--base-clr);
 }
-<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
 
-=======
->>>>>>> main:src/app/components/styles/Sidebar.module.css
 .site-header.expand {
     left: 60px;
     width: calc(100vw - 60px);
 }
-<<<<<<< HEAD:src/app/components/styles/Navigation.module.css
-=======
 
-/* SIDEBAR STYLES */
->>>>>>> main:src/app/components/styles/Sidebar.module.css
+/* Sidebar Styles */
 .sidebar {
     box-sizing: border-box;
     height: 100vh;
@@ -224,4 +195,144 @@
 }
 .sidebar ul li:nth-of-type(10){
     padding-top: 1.5rem;
+}
+
+.main-content {
+    display: flex;
+    position: fixed;
+    top: 70px;
+    left: 250px;
+    width: calc(100vw - 250px);
+    height: calc(100vh - 70px);
+    color: black;
+    transition: left 0.3s ease-in-out, width 0.3s ease-in-out;
+
+}
+.main-content.expand {
+    left: 60px;
+    width: calc(100vw - 60px);
+}
+.search-container{
+    display: grid;
+    grid-template-columns: 0fr;
+    background-color: var(--base-clr);
+    transition: 300ms ease-in-out;
+    width: 0px;
+}
+.search-container div > input {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+.search-container .results, & > div > hr {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+.search-container.enabled{
+    grid-template-columns: 1fr;
+    width: 300px;
+    z-index: 100;
+}
+.search-container.enabled div > input {
+    opacity: 1;
+}
+.search-container.enabled .results, & > div > hr {
+    opacity: 1;
+}
+.search-content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1em;
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+.search-label{
+    font-size: 1.2em;
+    color: var(--text-clr);
+    overflow: hidden;
+}
+.search{
+    background-color: var(--text-clr);
+    border: 1px solid transparent;
+    border-radius: 0.3rem;
+    outline: none;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.search:focus{
+    border-color: var(--accent-clr);
+}
+.horizonal-line {
+    color: var(--text-clr);
+}
+.results{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--text-clr);
+    border-radius: 0.2rem;
+    padding: 0.4rem;
+    overflow: hidden;
+    opacity: 0;
+}
+.results > h1 {
+    font-size: 1.2em;
+    font-weight: 500;
+    overflow: hidden;
+}
+.results > p {
+    font-size: 0.9em;
+    padding-left: 1rem;
+    overflow: hidden;
+}
+.add-user-container {
+    display: grid;
+    grid-template-columns: 0fr;
+    background-color: var(--base-clr);
+    width: 0px;
+    transition: 300ms ease-in-out;
+}
+.add-user-container.enabled {
+    grid-template-columns: 1fr;
+    width: 300px;
+    z-index: 100;
+}
+.add-user-content {
+    padding: 1rem;
+    color: var(--text-clr);
+    text-wrap: nowrap;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+.add-user-content form {
+    display: flex;
+    flex-direction: column;
+}
+.add-user-content label {
+    padding-top: 0.5rem;
+}
+.add-user-content form input {
+    background-color: var(--text-clr);
+    border: 1px solid transparent;
+    border-radius: 0.3rem;
+    outline: none;
+    width: 100%;
+    padding: 0.4rem 1rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.add-user-content label:last-child {
+    padding-top: 0rem;
+}
+.add-user-content button {
+    margin-top: 2rem;
+    border: none;
+    border-radius: 5px;
+    padding: 0.4rem 0.4rem;
+}
+.add-user-content.enabled {
+    opacity: 1;
+    z-index: 100;
 }
