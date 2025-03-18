@@ -22,6 +22,9 @@ export default function Navigation(){
     const toggleUserDropdown = () => {
         setUserDropdown(!userDropdown);
 
+        if (sidebarOpen) {
+            setSidebarOpen(false);
+        }
         if (merchDropdown) {
             setMerchDropdown(false);
         }
@@ -30,6 +33,9 @@ export default function Navigation(){
     const toggleMerchDropdown = () => {
         setMerchDropdown(!merchDropdown);
 
+        if (sidebarOpen) {
+            setSidebarOpen(false);
+        }
         if (userDropdown) {
             setUserDropdown(false);
         }
