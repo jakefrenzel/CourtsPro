@@ -21,3 +21,16 @@ body {
   min-height: 100vh;
   min-height: 100vh;
 }
+
+.developer-menu {
+  padding: 2em;
+  gap: 1rem;
+}
+.developer-menu nav h4 {
+  margin-bottom: 1rem;
+}
+.developer-menu nav{
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+}

@@ -223,7 +223,11 @@
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
 }
-.search-container .results, & > div > hr {
+.search-container .results {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+.search-container .results > div > .horizonal-line {
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
 }
