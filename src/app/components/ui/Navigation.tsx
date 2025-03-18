@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
-export default function Navigation({ children }) {
+export default function Navigation({ children } : { children: React.ReactNode }) {
     
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [userDropdown, setUserDropdown] = useState(false);
@@ -314,7 +314,7 @@ export default function Navigation({ children }) {
                 </li>
             </ul>
             </aside>
-            <main className={styles['main-content']}>
+            <main className={`${styles["main-content"]} ${sidebarOpen ? styles["expand"] : ""}`}>
                 {children}
             </main>
         </div>
