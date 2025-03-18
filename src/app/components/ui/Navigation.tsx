@@ -14,11 +14,23 @@ export default function Navigation({ children } : { children: React.ReactNode })
     const [userAdd, setUserAdd] = useState(false);
 
     const toggleSidebar = () => {
-        setSidebarOpen(!sidebarOpen);
+        if (search || userAdd) {
+            setSearch(false);
+            setUserAdd(false);
 
-        if (userDropdown || merchDropdown) {
-            setUserDropdown(false);
-            setMerchDropdown(false);
+            setTimeout(() => {
+                setSidebarOpen(!sidebarOpen);
+                if (userDropdown || merchDropdown) {
+                    setUserDropdown(false);
+                    setMerchDropdown(false);
+                }
+            }, 300);
+        } else {
+            setSidebarOpen(!sidebarOpen);
+            if (userDropdown || merchDropdown) {
+                setUserDropdown(false);
+                setMerchDropdown(false);
+            }
         }
     };
 
@@ -45,18 +57,28 @@ export default function Navigation({ children } : { children: React.ReactNode })
     };
 
     const toggleSearch = () => {
-        setSearch(!search);
+        if (userAdd) {
+            setUserAdd(false);
+            setTimeout(() => setSearch(!search), 300);
+        } else {
+            setSearch(!search);
+        }
     }
 
     const toggleUserAdd = () => {
-        setSearch(!userAdd);
+        if (search) {
+            setSearch(false);
+            setTimeout(() => setUserAdd(!userAdd), 300);
+        } else {
+            setUserAdd(!userAdd);
+        }
     }
 
     return (
         <div className={styles["nav-container"]}>
             <nav className={`${styles['site-header']} ${sidebarOpen ? styles["expand"] : ""}`} id="site-header">
                 <div className={styles['branding-container']}>
-                    <Image
+                    <Image 
                     className={styles["company-logo"]}
                     src="/CourtsProLogo.png"
                     alt="CourtsPro Logo"
@@ -314,9 +336,43 @@ export default function Navigation({ children } : { children: React.ReactNode })
                 </li>
             </ul>
             </aside>
-            <main className={`${styles["main-content"]} ${sidebarOpen ? styles["expand"] : ""}`}>
-                {children}
+            <main className={styles["main-content"]}>
+                <div className={`${styles["search-container"]} ${search ? styles["enabled"] : ""}`}>
+                    <div className={styles["search-content"]}>
+                        <label htmlFor="search" className={styles["search-label"]}>User search</label>
+                        <input className={styles["search"]} type="text" placeholder="Enter name, email, or phone"/>
+                        <hr className={styles["horizontal-line"]} />
+                        <div className={styles["results"]}>
+                            <h1>Jake Frenzel</h1>
+                            <p>jake@courtspro.com</p>
+                        </div>
+                        <div className={styles["results"]}>
+                            <h1>Eli Wilson</h1>
+                            <p>eli@courtspro.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div className={`${styles["add-user-container"]} ${userAdd ? styles["enabled"] : ""}`}>
+                    <div className={`${styles["add-user-content"]} ${userAdd ? styles["enabled"] : ""}`}>
+                        <label htmlFor="search" className={styles["search-label"]}>User Add</label>
+                        <hr className={styles["horizontal-line"]}/>
+                        <form>
+                            <label htmlFor="first-name">First name</label>
+                            <input id="first-name" type="text" />
+                            <label htmlFor="last-name">Last name</label>
+                            <input id="last-name" type="text" />
+                            <label htmlFor="email">Email</label>
+                            <input id="email" type="text" />
+                            <label htmlFor="phone">Phone</label>
+                            <input id="phone" type="text" />
+                            <button type="submit">Add user</button>
+                        </form>
+                    </div>
+                </div>
+                DIVs, etc. for main get placed within this container as if it were a whole new page. This is all the remaining space besides the header and sidebar.
+                <p className={styles["test"]}></p>
             </main>
+            {children}
         </div>
     );
 }
