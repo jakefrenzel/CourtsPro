@@ -1,9 +1,7 @@
-import Navigation from '@/app/components/ui/Navigation';
+import InitialLayout from '@/app/components/layouts/InitialLayout';
 
 export default function Page(){
     return (
-        <>
-            <Navigation />
-        </>
+        <InitialLayout />
     );
 }

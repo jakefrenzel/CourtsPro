@@ -336,7 +336,7 @@ export default function Navigation({ children } : { children: React.ReactNode })
                 </li>
             </ul>
             </aside>
-            <main className={styles["main-content"]}>
+            <main className={`${styles["main-content"]} ${sidebarOpen ? styles["expand"] : ""}`}>
                 <div className={`${styles["search-container"]} ${search ? styles["enabled"] : ""}`}>
                     <div className={styles["search-content"]}>
                         <label htmlFor="search" className={styles["search-label"]}>User search</label>
@@ -369,10 +369,10 @@ export default function Navigation({ children } : { children: React.ReactNode })
                         </form>
                     </div>
                 </div>
-                DIVs, etc. for main get placed within this container as if it were a whole new page. This is all the remaining space besides the header and sidebar.
-                <p className={styles["test"]}></p>
+                <div>
+                    {children}
+                </div>
             </main>
-            {children}
         </div>
     );
 }

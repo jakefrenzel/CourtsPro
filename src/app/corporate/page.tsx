@@ -1,12 +1,7 @@
-import Navigation from '@/app/components/ui/Navigation';
-import Main from '@/app/components/ui/Main';
+import InitialLayout from '@/app/components/layouts/InitialLayout';
 
 export default function Page(){
     return (
-        <>
-            <Navigation>
-                <Main />
-            </Navigation>
-        </>
+        <InitialLayout />
     );
 }
