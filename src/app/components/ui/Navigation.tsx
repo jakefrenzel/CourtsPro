@@ -1,12 +1,15 @@
-'use client';
+"use client";
 
 import styles from '@/app/components/styles/Navigation.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
-export default function Navigation({ children } : { children: React.ReactNode }) {
+const Navigation = ({ children } : { children: React.ReactNode }) => {
     
+    const pathname = usePathname();
+
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [userDropdown, setUserDropdown] = useState(false);
     const [merchDropdown, setMerchDropdown] = useState(false);
@@ -130,8 +133,8 @@ export default function Navigation({ children } : { children: React.ReactNode })
                         </svg>
                     </button>
                 </li>
-                <li className={styles["active"]}>
-                    <Link href="/admin">
+                <li className={`${pathname === "/corporate" ? styles["active"] : ""}`}>
+                    <Link href="/corporate">
                         <svg
                         xmlns="http://www.w3.org/2000/svg"
                         id="Bold"
@@ -182,8 +185,8 @@ export default function Navigation({ children } : { children: React.ReactNode })
                         </div>
                     </ul>
                 </li>
-                <li>
-                    <Link href="/programs">
+                <li className={`${pathname === "/corporate/programs" ? styles["active"] : ""}`}>
+                    <Link href="/corporate/programs">
                         <svg
                         id="Layer_1"
                         height={24}
@@ -197,8 +200,8 @@ export default function Navigation({ children } : { children: React.ReactNode })
                         <span>Programs</span>
                     </Link>
                 </li>
-                <li>
-                    <Link href="/memberships">
+                <li className={`${pathname === "/corporate/memberships" ? styles["active"] : ""}`}>
+                    <Link href="/corporate/memberships">
                         <svg
                         xmlns="http://www.w3.org/2000/svg"
                         id="Layer_1"
@@ -212,8 +215,8 @@ export default function Navigation({ children } : { children: React.ReactNode })
                         <span>Memberships</span>
                     </Link>
                 </li>
-                <li>
-                    <Link href="/lessons">
+                <li className={`${pathname === "/corporate/lessons" ? styles["active"] : ""}`}>
+                    <Link href="/corporate/lessons" >
                         <svg
                         xmlns="http://www.w3.org/2000/svg"
                         id="Layer_1"
@@ -227,8 +230,8 @@ export default function Navigation({ children } : { children: React.ReactNode })
                         <span>Lessons</span>
                     </Link>
                 </li>
-                <li>
-                    <Link href="/reports">
+                <li className={`${pathname === "/corporate/reports" ? styles["active"] : ""}`}>
+                    <Link href="/corporate/reports" >
                         <svg
                         xmlns="http://www.w3.org/2000/svg"
                         id="Layer_1"
@@ -280,8 +283,8 @@ export default function Navigation({ children } : { children: React.ReactNode })
                         </div>
                     </ul>
                 </li>
-                <li>
-                    <Link href="/announcements">
+                <li className={`${pathname === "/corporate/announcements" ? styles["active"] : ""}`}>
+                    <Link href="/corporate/announcements">
                         <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width={24}
@@ -299,8 +302,8 @@ export default function Navigation({ children } : { children: React.ReactNode })
                         <span>Announcements</span>
                     </Link>
                 </li>
-                <li>
-                    <Link href="/settings">
+                <li className={`${pathname === "/corporate/settings" ? styles["active"] : ""}`}>
+                    <Link href="/corporate/settings">
                         <svg
                         xmlns="http://www.w3.org/2000/svg"
                         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -320,8 +323,8 @@ export default function Navigation({ children } : { children: React.ReactNode })
                         <span>Settings</span>
                     </Link>
                 </li>
-                <li>
-                    <Link href="/info">
+                <li className={`${pathname === "/corporate/info" ? styles["active"] : ""}`}>
+                    <Link href="/corporate/info">
                         <svg
                         xmlns="http://www.w3.org/2000/svg"
                         id="Filled"
@@ -376,3 +379,5 @@ export default function Navigation({ children } : { children: React.ReactNode })
         </div>
     );
 }
+
+export default Navigation;
