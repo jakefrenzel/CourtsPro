@@ -1,11 +1,10 @@
 import Navigation from '@/app/components/ui/Navigation';
-import Main from '@/app/components/ui/Main';
 
-export default function Page(){
+export default function Page({children} : {children: any}){
     return (
         <div>
             <Navigation>
-                <Main />
+                {children}
             </Navigation>
         </div>
     );
